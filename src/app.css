@@ -80,6 +80,8 @@ body {
 }
 
 
+
+
 .logo {
     background-color:white;
     width: 50px;
@@ -178,6 +180,7 @@ body {
 }
 
 .product-list{
+    min-height: 100vh;
     text-align: center;
     margin-top: 70px;
     margin-bottom: 95px;
@@ -255,11 +258,6 @@ body {
     display: none;
 }
 
-
-.hide{
-    transition: 0.3s all ease-in-out;
-    display: none;
-}
 
 @media screen and (max-width: 1100px) {
     .product-list ul li{
@@ -476,6 +474,7 @@ background: linear-gradient(to bottom right, #0f0c29, #010101);
 }
 
 @media screen and (max-width:430px) {
+
     .search-box{
         width: 50vw;
         height: 10px;
