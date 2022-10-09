@@ -26,7 +26,7 @@ const Nav = () => {
       <nav className='navbar'>
 
         {auth ?
-
+        
           <ul className={isMobile?'nav-link-mobile' : ""}>
             <img className='logo' onClick={() => navigate('/')} src="https://www.graphicsprings.com/filestorage/stencils/0b06ebeb6a8f99bb799115f9a01fef2b.png?width=150&height=150" alt="" />
             <li>
