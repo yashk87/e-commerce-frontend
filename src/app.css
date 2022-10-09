@@ -381,7 +381,7 @@ body {
         display: flex;
     }
     .navbar{
-        height: 5vh;
+        height: 4vh;
         z-index: 905;
         overflow: hidden;
         transition: 0.2s all ease-in-out;
@@ -418,7 +418,7 @@ background: linear-gradient(to bottom right, #0f0c29, #010101);
     }
 .link{
    
-    margin: 20px 0px;
+    margin: 50px 0px;
     color: white;
 }
     .hide{
@@ -469,7 +469,7 @@ background: linear-gradient(to bottom right, #0f0c29, #010101);
 }
 
 .logo{
-    top: 6px;
+    top: 0px;
 }
 
 @media screen and (max-width:430px) {
