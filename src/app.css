@@ -325,7 +325,6 @@ body {
 
 
 @media screen and (max-width:720px) {
-   
 
     .overlay{
         width: 100vw;
@@ -397,7 +396,7 @@ body {
         position: absolute;
         width: 35px;
         right: 20px;
-        top: 18px;
+        top: 20px;
     }
 
     .nav-link-mobile{
@@ -470,10 +469,12 @@ background: linear-gradient(to bottom right, #0f0c29, #010101);
 }
 
 .logo{
-    top: 4px;
+    top: 6px;
 }
 
 @media screen and (max-width:430px) {
+
+
 
     .search-box{
         width: 50vw;
