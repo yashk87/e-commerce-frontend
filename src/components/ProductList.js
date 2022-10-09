@@ -11,14 +11,14 @@ const ProductList = () => {
     },[])
 
     const getProducts = async() =>{
-        let result = await fetch('http://localhost:5000/products')
+        let result = await fetch('https://edashboard87yk.herokuapp.com/products')
         result = await result.json();
         setProducts(result)
     }
 
     const deleteProduct = async (id) => {
         console.warn(id)
-        let result = await fetch(`http://localhost:5000/product/${id}`, {
+        let result = await fetch(`https://edashboard87yk.herokuapp.com/product/${id}`, {
             method: "Delete"
         });
         result = await result.json();
