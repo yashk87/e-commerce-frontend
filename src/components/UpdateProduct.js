@@ -14,7 +14,7 @@ function UpdateProduct() {
     },[])
 
     const getProductDetails =async () =>{
-      let result = await fetch(`http://localhost:5000/product/${params.id}`)
+      let result = await fetch(`https://edashboard87yk.herokuapp.com/product/${params.id}`)
       result = await result.json()
       setName(result.name)
       setCategory(result.category)
