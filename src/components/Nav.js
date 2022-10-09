@@ -1,5 +1,4 @@
-import React from 'react';
-import Hamburger from './Hamburger'
+import React from 'react';                
 import { useState } from 'react';
 import {
   Link, useNavigate
@@ -7,74 +6,57 @@ import {
 const Nav = () => {
   const auth = localStorage.getItem('user')
   const navigate = useNavigate();
-  const [hide,isHide] = useState(true)
+  const [isMobile,setisMobile] = useState(false)
   const logout = () => {
     localStorage.clear()
     navigate('/signup')
-    isHide(false)
+    isMobile ? setisMobile(false) : setisMobile(true)
+
   }
 
   const toggle = () =>{
-    hide?isHide(false) : isHide(true)
-    console.log(hide)
+
+    isMobile ? setisMobile(false) : setisMobile(true)
   }
 
 
   return (
     <>
 
-
-
-      <nav className='navbar sticky'>
+      <nav className='navbar'>
 
         {auth ?
 
-          <ul>
+          <ul className={isMobile?'nav-link-mobile' : ""}>
             <img className='logo' onClick={() => navigate('/')} src="https://www.graphicsprings.com/filestorage/stencils/0b06ebeb6a8f99bb799115f9a01fef2b.png?width=150&height=150" alt="" />
             <li>
-              <Link to='/' className='link'>Products</Link>
+              <Link to='/' onClick={toggle} className='link product-link'>Products</Link>
             </li>
             <li>
-              <Link to='/add' className='link'>Add Products</Link>
+              <Link to='/add' onClick={toggle} className='link'>Add Products</Link>
             </li>
-            {/* <li>
-      <Link to='/update' className='link'>Update Products</Link>
-      </li> */}
             <li>
-              <Link to='/profile' className='link'>Profile</Link>
+              <Link to='/profile' onClick={toggle} className='link'>Profile</Link>
             </li>
             <li>
               <Link to='/signup' onClick={logout} className='link'>Logout({JSON.parse(auth).name})</Link>
             </li>
             <img onClick={toggle} className='hamburger' src="https://img.icons8.com/office/344/menu--v1.png" alt="" />
+       
           </ul>
-
+          
           :
           <nav className='navbar'>
-            <ul className='flex' style={
-              {"display":"flex",
-              "flex-direction" : "row"
-            }
-            }>
+            <ul className={isMobile? 'nav-link-mobile' : "" }>
               <img className='logobig' onClick={() => navigate('/')} src="https://www.graphicsprings.com/filestorage/stencils/0b06ebeb6a8f99bb799115f9a01fef2b.png?width=150&height=150" alt="" />
-              <li><Link to='/signup' className='link'>Sign Up</Link></li>
-              <li><Link to='/login' className='link'>Login</Link></li>
-              <img onClick={toggle} className='hamburger' src="https://img.icons8.com/office/344/menu--v1.png" alt="" />
-            </ul>
-
+              <li><Link to='/signup' onClick={toggle} className='link'>Sign Up</Link></li>
+              <li><Link to='/login' onClick={toggle} className='link'>Login</Link></li>
+              <img onClick={toggle} className='hamburger' src="https://img.icons8.com/office/344/menu--v1.png" alt=""/> </ul>
           </nav>
         }
 
       </nav>
       
-      {
-        hide ? 
-      <Hamburger className="ham" truth={hide} />
-
-      : ""
-}
-
-
     </>
   )
 }

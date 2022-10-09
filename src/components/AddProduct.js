@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import { apis } from '../endpoints'
 
 function AddProduct() {
     const[name,setName] = useState("")
@@ -14,7 +13,7 @@ function AddProduct() {
             return false;
         }
         const userId = JSON.parse(localStorage.getItem('user'))._id;
-        let result = await fetch(apis.addProduct,{
+        let result = await fetch("https://edashboard87yk.herokuapp.com/add-product",{
             method:'post',
             body:JSON.stringify({name,price,category,company,userId}),
             headers:{

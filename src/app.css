@@ -20,13 +20,23 @@ body {
 
 }
 
+
+
+.up{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
 .navbar {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100vw;
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    position: relative;
+    z-index: 999;
     transition: 0.5s all ease-in-out;
+    overflow: hidden;
 }
 
 .sticky ul li{
@@ -80,18 +90,16 @@ body {
     position: absolute;
     cursor: pointer;
     margin-inline: 20px;
-    z-index: 999;
+    z-index: 800;
     left: 0;
 }
 
 .logobig {
     background-color: white;
     border-radius: 50%;
-    margin: 5px;
     position: absolute;
     cursor: pointer;
-    margin-inline: 20px;
-    z-index: 999;
+    z-index: 800;
     width: 80px;
     bottom: 50px;
     position: fixed;
@@ -163,13 +171,15 @@ body {
 }
 
 .profile{
+    width: 100vw;
+    height: 100vh;
     text-align: center;
     margin-top: 100px;
 }
 
 .product-list{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 70px;
     margin-bottom: 95px;
     overflow: hidden;
     
@@ -197,11 +207,11 @@ body {
 .signup-div {
     display: flex;
     width: 100%;
-    margin: auto;
-    margin-top: 50px;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: -110px;
 }
 
 .signup-btn {
@@ -234,6 +244,8 @@ body {
     margin-top: 100px;
     text-align: center;
     display: flex;
+    width: 100vw;
+    height: 100vh;
     /* flex-direction: column; */
     justify-content: center;
 }
@@ -242,6 +254,7 @@ body {
     width: 50px;
     display: none;
 }
+
 
 .hide{
     transition: 0.3s all ease-in-out;
@@ -314,12 +327,14 @@ body {
 @media screen and (max-width:720px) {
    
 
-
+    .product-link{
+        padding-top: 30px;
+    }
     .overlay{
         width: 100vw;
         height: 100vh;
-        z-index: 1001;
         display: flex;
+        z-index: 900;
         color: white;
         position: absolute;
         background: linear-gradient(to right, #000000, #16131e, #130b22);
@@ -347,6 +362,13 @@ body {
         align-items: center;
     }
 
+    .flex{
+    display: flex;
+    flex-direction: row;
+   
+
+    }
+
 
     .navbar ul{
         display: flex;
@@ -359,17 +381,46 @@ body {
         display: flex;
     }
     .navbar{
-        height: 3vh;
-        z-index: 1000;
+        height: 5vh;
+        z-index: 905;
+        overflow: hidden;
+        transition: 0.2s all ease-in-out;
+    }
+
+    ul{
+        transition: 0.2s all ease-in-out;
     }
 
     .hamburger{
         display: block;
         position: absolute;
+        width: 35px;
         right: 20px;
-        top: 4px;
+        top: 18px;
     }
 
+    .nav-link-mobile{
+        transition: 0.2s all ease-in-out;
+        position: absolute;
+        display: block;
+        list-style: none;
+        /* Created with https://www.css-gradient.com */
+background: #0f0c29;
+background: linear-gradient(to bottom right, #0f0c29, #010101);
+
+/* #0f0c29, #302b63, #24243e */
+        top: 0px;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        color: white;
+        font-size: 1.5rem;
+    }
+.link{
+   
+    margin: 20px 0px;
+    color: white;
+}
     .hide{
         display: flex;
         flex-direction: column;
@@ -432,8 +483,9 @@ body {
     }
 
     .hamburger{
-        width: 45px;
-        top: 6px;
+        width: 35px;
+        top: 18px;
+        right:7px;
     }
 
     .product-list ul {
@@ -456,7 +508,6 @@ body {
 
     .input-box{
         width: 86%;
-        margin: auto;
         margin-top: 15px;
     }
 

@@ -12,6 +12,7 @@ import Profile from './components/Profile';
 function App() {
   return (
   <>
+  
     <Nav />
       <Routes>
         <Route element={<PrivateComponent />}>
